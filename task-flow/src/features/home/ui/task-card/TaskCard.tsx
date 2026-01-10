@@ -1,4 +1,5 @@
-// propsオブジェクトとして受け取る
+import styles from "./TaskCard.module.css";
+
 export default function TaskCard({
   title,
   assignee,
@@ -9,10 +10,10 @@ export default function TaskCard({
   deadline: string;
 }) {
   return (
-    <li>
-      <ul>{title}</ul>
-      <ul>{assignee}</ul>
-      <ul>{deadline}</ul>
-    </li>
+    <div className={styles.card}>
+      <div className={styles.title}>{title}</div>
+      <div>担当者：{assignee}</div>
+      <div>期限：{deadline}</div>
+    </div>
   );
 }
